@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+<%= @room.name %>
+<%= image_tag "classroom.jpg" %>
+<% if is_admin? %>
+  <%= link_to 'Edit', edit_room_path(@room) %> |
+<% end %>
