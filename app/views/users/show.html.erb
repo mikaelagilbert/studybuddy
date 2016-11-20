@@ -5,16 +5,18 @@
   <%= @user.name %>
 </p>
 
+<p>
+  <strong>Favorites:</strong>
+</p>
+<table>
   <tbody>
     <% @user.favorites.each do |favorite| %>
       <tr>
         <td><%= link_to favorite.name, favorite %></td>
-        <td><%= link_to 'Edit', edit_room_path(favorite) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', @user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user) %>

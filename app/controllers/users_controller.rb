@@ -74,14 +74,14 @@ class UsersController < ApplicationController
   end
 
   def add_favorite
-    study_spot = StudySpot.find(params[:study_spot_id])
-    @user.favorites.append  study_spot unless @user.favorites.include?(study_spot)
-    redirect_to @user
+    room = Room.find(params[:room_id])
+    current_user.favorites.append  room unless current_user.favorites.include?(room)
+    redirect_to current_user
   end
 
   def remove_favorite
-    study_spot = StudySpot.find(params[:study_spot_id])
-    @user.favorites.delete(study_spot)
+    room = Room.find(params[:room_id])
+    @user.favorites.delete(room)
     redirect_to @user
   end
 

@@ -1,6 +1,24 @@
 <p id="notice"><%= notice %></p>
 <%= @room.name %>
 <%= image_tag "classroom.jpg" %>
+<table>
+  <thead>
+  Study Spots:
+  </thead>
+  <tbody>
+    <% @room.study_spots.each do |study_spot| %>
+      <tr><%= "Study Spot #{study_spot.id}" %></tr>
+      <tr>
+      <% if study_spot.is_open? %>
+        <p>available</p>
+      <% else %>
+        <p>occupied</p>
+      <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <% if is_admin? %>
   <%= link_to 'Edit', edit_room_path(@room) %> |
 <% end %>

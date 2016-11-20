@@ -17,5 +17,7 @@ class ApplicationController < ActionController::Base
   else
     false
   end
+
+  
   end
 end

@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
 Building.destroy_all
 Room.destroy_all
 StudySpot.destroy_all
@@ -13,7 +14,13 @@ StudySpot.destroy_all
 huntsman = Building.create(name: 'Huntsman')
 h1 = Room.create(name: '1st Floor Quiet Study Room', building_id: huntsman.id)
 h2 = Room.create(name: '2nd Floor Quiet Study Room', building_id: huntsman.id)
-huntsman.save
+(0..5).each do |i|
+  StudySpot.create(is_open: true, room_id: h1.id)
+end
+
+(0..5).each do |i|
+  StudySpot.create(is_open: true, room_id: h2.id)
+end
 
 van_pelt = Building.create(name: 'Van Pelt Library')
 
@@ -26,8 +33,10 @@ c2 = Room.create(name: 'Amazon@Penn', building_id: commons.id)
 
 annenberg = Building.create(name: 'Annenberg Library')
 
-mcneil = Building.create(name: 'McNeil')
+mcneil = Building.create(name: 'McNeil Building')
 
 williams = Building.create(name: 'Williams Library')
 
 fagin = Building.create(name: 'Claire M. Fagin Hall')
+
+education_commons = Building.create(name: 'Education Commons')

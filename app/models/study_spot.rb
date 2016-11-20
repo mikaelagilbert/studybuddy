@@ -14,4 +14,5 @@ class StudySpot < ActiveRecord::Base
   validates :is_open, presence: true
   belongs_to :room
 
+  attr_accessor :is_open
 end

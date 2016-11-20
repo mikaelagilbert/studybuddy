@@ -18,7 +18,7 @@
       <tr>
         <td><%= link_to room.name, room %></td>
         <% if logged_in? && !is_admin? %>
-          <td><%= link_to 'Add to Favorites'   %></td>
+          <td><%= link_to 'Add to Favorites', "/users/#{current_user.id}/#{room.id}", method: :post %></td>
         <% end %>
         <% if is_admin? %>
           <td><%= link_to 'Edit', edit_room_path(room) %></td>
@@ -31,5 +31,4 @@
 
 <% if is_admin? %>
   <%= link_to 'Edit', edit_building_path(@building) %> |
-  <%= link_to 'Back', buildings_path %>
 <% end %>

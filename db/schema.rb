@@ -34,18 +34,11 @@ ActiveRecord::Schema.define(version: 20161116040454) do
   end
 
   create_table "study_spots", force: :cascade do |t|
-    t.boolean  "is_open"
+    t.boolean  "is_open",    default: true
     t.string   "arduino_id"
     t.integer  "room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "study_spots_users", force: :cascade do |t|
-    t.integer  "study_spot_id"
-    t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "users", force: :cascade do |t|
