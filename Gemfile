@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.10'
 # gem 'devise'
 gem 'annotate'
 
-gem 'actioncable'
+gem 'actioncable', github: 'rails/actioncable', branch: 'archive'
 
 gem 'sprockets-es6'
 
