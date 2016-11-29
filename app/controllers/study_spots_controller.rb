@@ -40,9 +40,11 @@ class StudySpotsController < ApplicationController
   # PATCH/PUT /study_spots/1
   # PATCH/PUT /study_spots/1.json
   def update
+    @study_spot = StudySpot.find_by(arduino_id: params[:id])
+    @study_spot.is_open = !@study_spot.is_open
     respond_to do |format|
       if @study_spot.update(study_spot_params)
-        format.html { redirect_to @study_spot, notice: 'Study spot was successfully updated.' }
+        format.html { redirect_to @study_spot.room, notice: 'Study spot was successfully updated.' }
         format.json { render :show, status: :ok, location: @study_spot }
       else
         format.html { render :edit }
@@ -61,17 +63,17 @@ class StudySpotsController < ApplicationController
     end
   end
 
-  def spot_open
-    @study_spot = StudySpot.where("arduino_id = ?",params[:id])
-    @study_spot.is_open = true
-    @study_spot.save
-  end
+  # def spot_open
+  #   @study_spot = StudySpot.where("arduino_id = ?",params[:id])
+  #   @study_spot.is_open = true
+  #   @study_spot.save
+  # end
 
-  def spot_taken
-    @study_spot = StudySpot.where("arduino_id = ?",params[:id])
-    @study_spot.is_open = false
-    @study_spot.save
-  end
+  # def spot_taken
+  #   @study_spot = StudySpot.where("arduino_id = ?",params[:id])
+  #   @study_spot.is_open = false
+  #   @study_spot.save
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

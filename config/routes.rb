@@ -52,12 +52,7 @@
 Rails.application.routes.draw do
   resources :buildings
   resources :rooms
-  resources :study_spots do
-    member do
-      put 'spot_open'
-      put 'spot_taken'
-    end
-  end
+  resources :study_spots
   resources :users
 
   root 'welcome#index'
