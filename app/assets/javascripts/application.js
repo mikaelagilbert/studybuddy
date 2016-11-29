@@ -17,6 +17,7 @@
 //= require jquery.dropotron.min
 //= require bootstrap.min
 //= require turbolinks
+//= require cable
 //= require_tree .
 //= require jquery.onvisible.min
 //= require util

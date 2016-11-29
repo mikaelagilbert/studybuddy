@@ -12,4 +12,8 @@
 class Building < ActiveRecord::Base
   validates :name, presence: true
   has_many :rooms
+
+  def self.search(search)
+    where("name LIKE ?", "%#{search}")
+  end
 end

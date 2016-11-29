@@ -5,6 +5,9 @@ class BuildingsController < ApplicationController
   # GET /buildings.json
   def index
     @buildings = Building.all
+    if params[:search]
+      @buildings = Building.search(params[:search])
+    end
   end
 
   # GET /buildings/1

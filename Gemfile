@@ -29,6 +29,10 @@ gem 'bcrypt', '~> 3.1.10'
 # gem 'devise'
 gem 'annotate'
 
+gem 'actioncable'
+
+gem 'sprockets-es6'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

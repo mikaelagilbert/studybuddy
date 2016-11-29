@@ -5,7 +5,7 @@
 <% if is_admin? %>
   <%= link_to 'New Building', new_building_path %>
 <% end %>
-
+<br>
 
 <html>
   <head>
@@ -21,25 +21,16 @@
     <!-- Wrapper -->
       <div id="wrapper">
 
-        <!-- Header -->
-          <header id="header">
-            <div class="inner">
-
-              <!-- Nav -->
-                <nav>
-                  <ul>
-                    <li><a href="#menu">Menu</a></li>
-                  </ul>
-                </nav>
-            </div>
-          </header>
+        <!-- search bar -->
+        <%= form_tag(buildings_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search by Building name" %>
+        <%= submit_tag "Search" %>
+        <% end %>
+        <br>
 
         <!-- Main -->
           <div id="main">
             <div class="inner">
-              <header>
-                <h1>Buildings with Study Spaces</h1>
-              </header>
               <section class="tiles">
                 <% i = 1 %>
                 <% @buildings.each do |building| %>
