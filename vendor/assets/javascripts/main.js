@@ -100,7 +100,7 @@
 		// Carousels.
 			$('.carousel').each(function() {
 
-				//console.log("Hello carousel");
+				console.log("Hello carousel");
 				var	$t = $(this),
 					$forward = $('<span class="forward"></span>'),
 					$backward = $('<span class="backward"></span>'),
