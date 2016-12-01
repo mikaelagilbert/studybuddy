@@ -14,6 +14,6 @@ class StudySpot < ActiveRecord::Base
   validates :is_open, presence: true
   belongs_to :room
 
-  after_commit { UpdateRelayJob.perform_later(self) }
+  #after_commit { UpdateRelayJob.perform_later(self) }
   # after_update
 end
