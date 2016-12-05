@@ -40,7 +40,7 @@ class StudySpotsController < ApplicationController
   # PATCH/PUT /study_spots/1
   # PATCH/PUT /study_spots/1.json
   def update
-    @study_spot = StudySpot.find_by(arduino_id: params[:id])
+    # @study_spot = StudySpot.find_by(id: params[:id])
     @study_spot.is_open = !@study_spot.is_open
     respond_to do |format|
       if @study_spot.update(study_spot_params)
