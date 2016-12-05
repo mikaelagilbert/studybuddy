@@ -46,6 +46,7 @@
               <%= link_to image_tag("#{building.name}.jpg"), building, class: "image featured" %> 
               <header>
                 <h3><strong><%= link_to building.name, building %></strong></h3>
+                <br>
                 <h4> <%= building.address%></h4>
               </header>
             </article>
@@ -108,7 +109,7 @@
             <div class="row">
 
               <!-- Posts -->
-                <section class="4u 12u(mobile)">
+                <section class="4u 12u(mobile) -4u">
                   <header>
                     <h2 class="icon fa-file circled"><span class="label">Team</span></h2>
                   </header>
