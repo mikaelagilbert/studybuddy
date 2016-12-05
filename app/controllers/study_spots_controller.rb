@@ -40,10 +40,9 @@ class StudySpotsController < ApplicationController
   # PATCH/PUT /study_spots/1
   # PATCH/PUT /study_spots/1.json
   def update
-    # @study_spot = StudySpot.find_by(id: params[:id])
-    @study_spot.is_open = !@study_spot.is_open
+    status = @study_spot.update_attribute(:is_open, !@study_spot.is_open)
     respond_to do |format|
-      if @study_spot.update(study_spot_params)
+      if status
         format.html { redirect_to @study_spot.room, notice: 'Study spot was successfully updated.' }
         format.json { render :show, status: :ok, location: @study_spot }
       else
