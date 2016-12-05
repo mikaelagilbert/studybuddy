@@ -1,52 +1,43 @@
 # == Route Map
 #
-#                Prefix Verb   URI Pattern                           Controller#Action
-#                admins GET    /admins(.:format)                     admins#index
-#                       POST   /admins(.:format)                     admins#create
-#             new_admin GET    /admins/new(.:format)                 admins#new
-#            edit_admin GET    /admins/:id/edit(.:format)            admins#edit
-#                 admin GET    /admins/:id(.:format)                 admins#show
-#                       PATCH  /admins/:id(.:format)                 admins#update
-#                       PUT    /admins/:id(.:format)                 admins#update
-#                       DELETE /admins/:id(.:format)                 admins#destroy
-#             buildings GET    /buildings(.:format)                  buildings#index
-#                       POST   /buildings(.:format)                  buildings#create
-#          new_building GET    /buildings/new(.:format)              buildings#new
-#         edit_building GET    /buildings/:id/edit(.:format)         buildings#edit
-#              building GET    /buildings/:id(.:format)              buildings#show
-#                       PATCH  /buildings/:id(.:format)              buildings#update
-#                       PUT    /buildings/:id(.:format)              buildings#update
-#                       DELETE /buildings/:id(.:format)              buildings#destroy
-#                 rooms GET    /rooms(.:format)                      rooms#index
-#                       POST   /rooms(.:format)                      rooms#create
-#              new_room GET    /rooms/new(.:format)                  rooms#new
-#             edit_room GET    /rooms/:id/edit(.:format)             rooms#edit
-#                  room GET    /rooms/:id(.:format)                  rooms#show
-#                       PATCH  /rooms/:id(.:format)                  rooms#update
-#                       PUT    /rooms/:id(.:format)                  rooms#update
-#                       DELETE /rooms/:id(.:format)                  rooms#destroy
-#  spot_open_study_spot PUT    /study_spots/:id/spot_open(.:format)  study_spots#spot_open
-# spot_taken_study_spot PUT    /study_spots/:id/spot_taken(.:format) study_spots#spot_taken
-#           study_spots GET    /study_spots(.:format)                study_spots#index
-#                       POST   /study_spots(.:format)                study_spots#create
-#        new_study_spot GET    /study_spots/new(.:format)            study_spots#new
-#       edit_study_spot GET    /study_spots/:id/edit(.:format)       study_spots#edit
-#            study_spot GET    /study_spots/:id(.:format)            study_spots#show
-#                       PATCH  /study_spots/:id(.:format)            study_spots#update
-#                       PUT    /study_spots/:id(.:format)            study_spots#update
-#                       DELETE /study_spots/:id(.:format)            study_spots#destroy
-#                 users GET    /users(.:format)                      users#index
-#                       POST   /users(.:format)                      users#create
-#              new_user GET    /users/new(.:format)                  users#new
-#             edit_user GET    /users/:id/edit(.:format)             users#edit
-#                  user GET    /users/:id(.:format)                  users#show
-#                       PATCH  /users/:id(.:format)                  users#update
-#                       PUT    /users/:id(.:format)                  users#update
-#                       DELETE /users/:id(.:format)                  users#destroy
-#                  root GET    /                                     welcome#index
-#                 login GET    /login(.:format)                      sessions#new
-#                       POST   /login(.:format)                      sessions#create
-#                logout DELETE /logout(.:format)                     sessions#destroy
+#          Prefix Verb   URI Pattern                     Controller#Action
+#       buildings GET    /buildings(.:format)            buildings#index
+#                 POST   /buildings(.:format)            buildings#create
+#    new_building GET    /buildings/new(.:format)        buildings#new
+#   edit_building GET    /buildings/:id/edit(.:format)   buildings#edit
+#        building GET    /buildings/:id(.:format)        buildings#show
+#                 PATCH  /buildings/:id(.:format)        buildings#update
+#                 PUT    /buildings/:id(.:format)        buildings#update
+#                 DELETE /buildings/:id(.:format)        buildings#destroy
+#           rooms GET    /rooms(.:format)                rooms#index
+#                 POST   /rooms(.:format)                rooms#create
+#        new_room GET    /rooms/new(.:format)            rooms#new
+#       edit_room GET    /rooms/:id/edit(.:format)       rooms#edit
+#            room GET    /rooms/:id(.:format)            rooms#show
+#                 PATCH  /rooms/:id(.:format)            rooms#update
+#                 PUT    /rooms/:id(.:format)            rooms#update
+#                 DELETE /rooms/:id(.:format)            rooms#destroy
+#     study_spots GET    /study_spots(.:format)          study_spots#index
+#                 POST   /study_spots(.:format)          study_spots#create
+#  new_study_spot GET    /study_spots/new(.:format)      study_spots#new
+# edit_study_spot GET    /study_spots/:id/edit(.:format) study_spots#edit
+#      study_spot GET    /study_spots/:id(.:format)      study_spots#show
+#                 PATCH  /study_spots/:id(.:format)      study_spots#update
+#                 PUT    /study_spots/:id(.:format)      study_spots#update
+#                 DELETE /study_spots/:id(.:format)      study_spots#destroy
+#           users GET    /users(.:format)                users#index
+#                 POST   /users(.:format)                users#create
+#        new_user GET    /users/new(.:format)            users#new
+#       edit_user GET    /users/:id/edit(.:format)       users#edit
+#            user GET    /users/:id(.:format)            users#show
+#                 PATCH  /users/:id(.:format)            users#update
+#                 PUT    /users/:id(.:format)            users#update
+#                 DELETE /users/:id(.:format)            users#destroy
+#            root GET    /                               welcome#index
+#           login GET    /login(.:format)                sessions#new
+#                 POST   /login(.:format)                sessions#create
+#          logout DELETE /logout(.:format)               sessions#destroy
+#                 POST   /users/:id/:room_id(.:format)   users#add_favorite
 #
 
 Rails.application.routes.draw do

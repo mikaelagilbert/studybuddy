@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h1><strong><%= @room.name %></strong></h1>
-<%= image_tag "classroom.jpg" %>
 <br>
-
 <table>
   <thead>
   <strong>Study Spots:</strong>
@@ -20,7 +18,6 @@
     <% end %>
   </tbody>
 </table>
-
 
 <% if is_admin? %>
   <%= link_to 'Edit', edit_room_path(@room) %> |

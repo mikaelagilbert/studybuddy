@@ -11,7 +11,7 @@ Building.destroy_all
 Room.destroy_all
 StudySpot.destroy_all
 
-huntsman = Building.create(name: 'Huntsman')
+huntsman = Building.create(name: 'Huntsman', address: '3730 Locust Walk')
 h1 = Room.create(name: '1st Floor Quiet Study Room', building_id: huntsman.id)
 h2 = Room.create(name: '2nd Floor Quiet Study Room', building_id: huntsman.id)
 (0..5).each do |i|
@@ -22,21 +22,19 @@ end
   StudySpot.create(is_open: true, room_id: h2.id)
 end
 
-van_pelt = Building.create(name: 'Van Pelt Library')
+van_pelt = Building.create(name: 'Van Pelt Library', address: '3420 Walnut St')
 
-fisher_fine_arts = Building.create(name: 'Fisher Fine Arts Library')
+fisher_fine_arts = Building.create(name: 'Fisher Fine Arts Library', address: '220 S. 34th St')
 f1 = Room.create(name: 'First Floor', building_id: fisher_fine_arts.id)
 
-commons = Building.create(name: '1920 Commons')
+commons = Building.create(name: '1920 Commons', address: '3800 Locust Walk')
 c1 = Room.create(name: 'Starbucks under Commons', building_id: commons.id)
 c2 = Room.create(name: 'Amazon@Penn', building_id: commons.id)
 
-annenberg = Building.create(name: 'Annenberg Library')
+annenberg = Building.create(name: 'Annenberg Library', address: '3620 Walnut St')
 
-mcneil = Building.create(name: 'McNeil Building')
+mcneil = Building.create(name: 'McNeil Building', address: '3718 Locust Walk')
 
-williams = Building.create(name: 'Williams Library')
+williams = Building.create(name: 'Williams Library', address: '255 S. 36th St')
 
-fagin = Building.create(name: 'Claire M. Fagin Hall')
-
-education_commons = Building.create(name: 'Education Commons')
+education_commons = Building.create(name: 'Education Commons', address: 'Smith Walk')

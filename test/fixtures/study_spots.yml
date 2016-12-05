@@ -3,11 +3,11 @@
 # Table name: study_spots
 #
 #  id         :integer          not null, primary key
-#  is_open    :boolean
+#  is_open    :boolean          default(TRUE)
+#  arduino_id :string
 #  room_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  arduino_id :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

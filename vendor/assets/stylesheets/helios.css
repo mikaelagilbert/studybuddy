@@ -2096,7 +2096,7 @@
 
   #header {
     position: relative;
-    background-image: url("/assets/images/upenn.jpg");
+    background-image: url("/assets/upenn.jpg");
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -2463,7 +2463,7 @@
         position: absolute;
         top: 50%;
         margin: -1.5em 0 0 0;
-        background: url("images/arrow.svg") no-repeat center center;
+        background: url("/assets/arrow.svg") no-repeat center center;
       }
 
       .carousel .forward:hover:before, .carousel .backward:hover:before {

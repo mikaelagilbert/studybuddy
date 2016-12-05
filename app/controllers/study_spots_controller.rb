@@ -62,18 +62,6 @@ class StudySpotsController < ApplicationController
     end
   end
 
-  # def spot_open
-  #   @study_spot = StudySpot.where("arduino_id = ?",params[:id])
-  #   @study_spot.is_open = true
-  #   @study_spot.save
-  # end
-
-  # def spot_taken
-  #   @study_spot = StudySpot.where("arduino_id = ?",params[:id])
-  #   @study_spot.is_open = false
-  #   @study_spot.save
-  # end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_study_spot
