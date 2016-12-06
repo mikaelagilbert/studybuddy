@@ -85,6 +85,11 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+  def new_admin
+    @user = User.new
+    render :template => "users/new_admin.html.erb"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

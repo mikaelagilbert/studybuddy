@@ -22,7 +22,7 @@
         <% end %>
         <% if is_admin? %>
           <td><%= link_to 'Edit', edit_room_path(room) %></td>
-          <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -30,5 +30,6 @@
 </table>
 
 <% if is_admin? %>
-  <%= link_to 'Edit', edit_building_path(@building) %> |
+  <%= link_to 'Edit Building', edit_building_path(@building) %> |
+  <%= link_to 'Delete Building', @building, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>

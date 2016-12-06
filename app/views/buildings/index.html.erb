@@ -12,11 +12,8 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
   </head>
   <body>
-
-  <% if is_admin? %>
-  <%= link_to 'New Building', new_building_path %>
-  <% end %>
   <br>
+  
     <!-- Wrapper -->
       <div id="wrapper">
         <div class="container">
@@ -39,38 +36,16 @@
                     <%= link_to image_tag("#{building.name}.jpg"), building, class: "image"%>
                   </span>
                   <h2><%= link_to building.name, building, class: "section-tile_name" %></h2>
-                  <% if is_admin? %>
-                    <%= link_to 'Edit', edit_building_path(building) %></td>
-                    <%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %>
-                  <% end %>
                   </article>
                 <% end %>
               </section>
             </div>
           </div>
 
-      </div>
-
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @buildings.each do |building| %>
-      <tr>
-        <td><%= link_to building.name, building %></td>
         <% if is_admin? %>
-          <td><%= link_to 'Edit', edit_building_path(building) %></td>
-          <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= link_to 'New Building', new_building_path, class: "button pull-center" %>
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
 
 <br>
 

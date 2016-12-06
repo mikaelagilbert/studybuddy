@@ -8,17 +8,22 @@
   <br>
   <tbody>
     <% @room.study_spots.each do |study_spot| %>
-      <tr><%= "Study Spot #{study_spot.id}: " %>
+      <tr><td><%= "Study Spot #{study_spot.id}: " %></td>
       <% if study_spot.is_open? %>
-        <p>available</p>
+        <td>available</td>
       <% else %>
-        <p>occupied</p>
+        <td>occupied</td>
       <% end %>
+      <% if is_admin? %>
+        <td><%= link_to 'Delete', study_spot, method: :delete, data: { confirm: 'Are you sure' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+    
 
 <% if is_admin? %>
-  <%= link_to 'Edit', edit_room_path(@room) %> |
+  <%= link_to 'Edit Room', edit_room_path(@room) %> |
+  <%= link_to 'Delete Room', @room, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
