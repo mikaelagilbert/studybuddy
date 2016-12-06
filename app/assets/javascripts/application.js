@@ -18,8 +18,7 @@
 //= require bootstrap.min
 //= require turbolinks
 //= require cable
-//= require_tree .
+//= require_tree
 //= require jquery.onvisible.min
 //= require util
 //= require main
-//= require welcome

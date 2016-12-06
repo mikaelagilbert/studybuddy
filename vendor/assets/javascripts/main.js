@@ -6,26 +6,25 @@
 
 (function($) {
 
-	var settings = {
+	$(document).on('turbolinks:load', function() {
+		var settings = {
 
-		// Carousels
-			carousels: {
-				speed: 4,
-				fadeIn: true,
-				fadeDelay: 250
-			},
+			// Carousels
+				carousels: {
+					speed: 4,
+					fadeIn: true,
+					fadeDelay: 250
+				},
 
-	};
+		};
 
-	skel.breakpoints({
-		wide: '(max-width: 1680px)',
-		normal: '(max-width: 1280px)',
-		narrow: '(max-width: 960px)',
-		narrower: '(max-width: 840px)',
-		mobile: '(max-width: 736px)'
-	});
-
-	$(function() {
+		skel.breakpoints({
+			wide: '(max-width: 1680px)',
+			normal: '(max-width: 1280px)',
+			narrow: '(max-width: 960px)',
+			narrower: '(max-width: 840px)',
+			mobile: '(max-width: 736px)'
+		});
 
 		var	$window = $(window),
 			$body = $('body');
@@ -33,7 +32,7 @@
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
 
-			$window.on('load', function() {
+			$window.on('turbolinks:load', function() {
 				$body.removeClass('is-loading');
 			});
 
@@ -100,7 +99,6 @@
 		// Carousels.
 			$('.carousel').each(function() {
 
-				console.log("Hello carousel");
 				var	$t = $(this),
 					$forward = $('<span class="forward"></span>'),
 					$backward = $('<span class="backward"></span>'),
@@ -162,8 +160,6 @@
 					else
 						$t._updatePos = function() { $reel.css('transform', 'translate(' + pos + 'px, 0)'); };
 
-					console.log($forward);
-
 				// Forward.
 					$forward
 						.appendTo($t)
@@ -208,7 +204,7 @@
 						});
 
 				// Init.
-					$window.load(function() {
+					$(window).on('turbolinks:load', function() {
 
 						reelWidth = $reel[0].scrollWidth;
 
