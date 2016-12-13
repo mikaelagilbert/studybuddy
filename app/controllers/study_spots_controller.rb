@@ -25,7 +25,6 @@ class StudySpotsController < ApplicationController
   # POST /study_spots.json
   def create
     @study_spot = StudySpot.new(study_spot_params)
-    @study_spot.is_open == true
     respond_to do |format|
       if @study_spot.save
         format.html { redirect_to @study_spot, notice: 'Study spot was successfully created.' }
@@ -63,6 +62,7 @@ class StudySpotsController < ApplicationController
   end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_study_spot
       @study_spot = StudySpot.find(params[:id])

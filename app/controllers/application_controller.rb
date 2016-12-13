@@ -11,12 +11,10 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method def is_admin?
-  if logged_in?
-    current_user.is_admin 
-  else
-    false
-  end
-
-  
+    if logged_in?
+      current_user.is_admin 
+    else
+      false
+    end
   end
 end

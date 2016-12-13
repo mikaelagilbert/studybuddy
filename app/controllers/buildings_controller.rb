@@ -5,9 +5,7 @@ class BuildingsController < ApplicationController
   # GET /buildings.json
   def index
     @buildings = Building.all
-    if params[:search]
-      @buildings = Building.search(params[:search])
-    end
+    @buildings = Building.search(params[:search]) if params[:search]
   end
 
   # GET /buildings/1
@@ -28,7 +26,6 @@ class BuildingsController < ApplicationController
   # POST /buildings.json
   def create
     @building = Building.new(building_params)
-
     respond_to do |format|
       if @building.save
         format.html { redirect_to @building, notice: 'Building was successfully created.' }
@@ -65,6 +62,7 @@ class BuildingsController < ApplicationController
   end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_building
       @building = Building.find(params[:id])

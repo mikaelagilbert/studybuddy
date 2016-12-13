@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     end
   end
 
-   def help_create
+  def help_create
     @user = User.new(user_params)
     @user.password = user_params[:password]
     @user.favorites = []
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
 
   def add_favorite
     room = Room.find(params[:room_id])
-    current_user.favorites.append  room unless current_user.favorites.include?(room)
+    current_user.favorites.append room unless current_user.favorites.include?(room)
     redirect_to current_user
   end
 
@@ -85,6 +85,7 @@ class UsersController < ApplicationController
     redirect_to current_user
   end
 
+  # this feature is not fully implemented so this method is not used (yet)
   def new_admin
     @user = User.new
     render :template => "users/new_admin.html.erb"
