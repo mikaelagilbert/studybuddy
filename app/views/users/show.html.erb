@@ -13,7 +13,7 @@
     <% @user.favorites.each do |favorite| %>
       <tr>
         <td><%= link_to favorite.name, favorite %></td>
-        <td><%= link_to 'Remove', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', "/users/#{current_user.id}/#{favorite.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -81,8 +81,8 @@ class UsersController < ApplicationController
 
   def remove_favorite
     room = Room.find(params[:room_id])
-    @user.favorites.delete(room)
-    redirect_to @user
+    current_user.favorites.delete(room)
+    redirect_to current_user
   end
 
   def new_admin
